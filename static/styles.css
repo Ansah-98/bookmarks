@@ -1,0 +1,41 @@
+.header{
+    padding-bottom: 2%;
+    margin-bottom: 1% ;
+    background-color: yellow;
+ }
+ 
+.logo {
+    padding-top: 10%;
+    margin-top: 40%; 
+} 
+.menu{  
+    margin-bottom: 100%;
+    margin-left: 30% ;
+    display: inline;
+    text-decoration: none;
+    background-color: black;
+    color: black;    
+}
+.selected{
+    display: inline;
+}
+.non-select{
+    display: inline;
+}
+.menu :active{
+    color: gray;
+    background-color: yellow;
+}
+.selected a{ 
+    display: inline;
+    color: yellow;
+    text-decoration: none;
+}
+.non-select a{
+    color: violet;
+    display: inline;
+    text-decoration: none;
+}
+.user{
+    margin-left: 90%;
+}

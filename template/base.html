@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static  '/styles.css'%}"> 
+</head>
+<body>
+    <div class="header">
+        <span class="logo"> BOOKMARK</span>
+        {%if request.user.is_authenticated %}
+        <ul class="menu">
+            <li {%if section == 'dashboard'%} class="selected" {%else%} class="non-select" {%endif%}    >
+                <a href="{%url 'dashboard' %}">My dashboard</a>
+            </li>
+            <li {% if section == 'images' %} class ="selected" {%else%} class="non-select" {%endif%}>
+                <a href="#"> Images</a>
+            </li>
+            <li {%if section == 'people' %} class="selected" {%else%} class="non-select" {%endif%}>
+                <a href="">People</a>
+            </li>
+        </ul>
+        {%endif%}
+    </div>
+    <span class="user">
+        {%if request.user.is_authenticated%}
+        Hello {{request.user.firstname}}   
+        <a href="{%url 'logout'%}">
+            Logout
+        </a>
+        {%else%}
+        <a href="{%url 'login'%}"> Login here </a>
+        {%endif%}
+     </span>
+    <div class="">
+        {%block content%}
+        {%endblock content%}
+    </div>
+</body>
+</html> 
