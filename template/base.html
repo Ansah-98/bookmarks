@@ -10,6 +10,17 @@
 </head>
 <body>
     <div class="header">
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+            <li class="{{message.tag}}">
+                {{message|safe}}
+                <a href="#" class="close">x</a>
+            
+            </li>
+            {%endfor%}
+        </ul>
+        {%endif%}
         <span class="logo"> BOOKMARK</span>
         {%if request.user.is_authenticated %}
         <ul class="menu">
@@ -35,7 +46,7 @@
         <a href="{%url 'login'%}"> Login here </a>
         {%endif%}
      </span>
-    <div class="">
+    <div class="content">
         {%block content%}
         {%endblock content%}
     </div>
