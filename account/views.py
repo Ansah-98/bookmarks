@@ -53,7 +53,7 @@ def register(request):
 def edit(request):
     print(type(request.user))
     profile = Profile.objects.get(user = request.user)
-    if profile == None:
+    if profile == None:  
         profile_edit = ProfileEditForms()
         user_edit = UserEditForm(instance=request.user)
     elif request.method == 'POST':   

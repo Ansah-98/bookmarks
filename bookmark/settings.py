@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'images.apps.ImagesConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bookmark.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -87,7 +89,13 @@ DATABASES = {
     }
 }
 
-
+AUTHENTICATION_BACKEND =[
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuth',
+    'social.backends.facebook.FacebookOAuth2', 
+    'social.backends.twitter.TwitterOAuth',
+    ''
+]
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

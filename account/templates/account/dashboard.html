@@ -3,6 +3,15 @@
 <div class="dashboard">
     <h1>Dashboard</h1>
     <p>welcome to my dashboard</p>
+
+    {%with total_images_created = request.user.images_created.count%}
+    <p>Welcome to you dashboard you have bookmarked</p>
+    {{total_images_created}} image {{total_images_created|pluralize}
+    {%endwith%}
+    <p>Drag the following bottom to your bookmarks toolbar to bookmark images from other website -->> <a href="javascript:{%include  'bookmarketlet_launcher.js'%}" class="bottom">Bookmark it</a></p>
+
+
     <p>if you want to edit your profile <a href="{%url 'edit'%}"> click here </a></p> 
+
 </div>
 {%endblock content%}
