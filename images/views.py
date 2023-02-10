@@ -24,3 +24,18 @@ def image_creation(request):
     else :
         image_form = ImageCreation()
     return render(request, 'images/create.html',{'form':image_form})
+
+def image_detail(request,id,slug):
+    image = Image.objects.get(pk =id)    
+    true = False
+    if image is not None:
+        true  = True
+        
+    return render(request,'images/detail.html', {'image': image,'true':true,'section':'images'})
+
+
+
+
+
+
+

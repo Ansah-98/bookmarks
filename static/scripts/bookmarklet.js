@@ -33,6 +33,7 @@
             window.open(site_url + 'images/create/?url='+encodeURIComponent(images)+ '&title=' + encodeURIComponent(jQuery('title').text() + '_bank'));
             
         })
+    
     };
     if (typeof window.jQuery != 'undefined'){
         bookmarklet()
